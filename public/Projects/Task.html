@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="task.png">
+    </head>
+    <body>
+        <style>
+            body {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Arial', sans-serif;
+                color: #fff;
+                text-align: center;
+                margin: 0 20px;
+            }
+
+            .container {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 2rem;
+                border-radius: 15px;
+                box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(4px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            h2 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            a {
+                text-decoration: none;
+                color: #ffdd57;
+                font-size: 1.2em;
+                transition: color 0.3s;
+            }
+
+            a:hover {
+                color: #ffbb33;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            li {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 10px;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background 0.3s;
+            }
+
+            li:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            input {
+                border-radius: 25px;
+                border: none;
+                padding: 10px;
+                font-size: 1em;
+                width: 70%;
+                margin-bottom: 10px;
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+
+            input::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            button {
+                border-radius: 25px;
+                border: none;
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.3s;
+            }
+
+            button:hover {
+                background-color: #45a049;
+                transform: scale(1.05);
+            }
+
+            .delete-btn {
+                background-color: #f44336;
+                margin-left: 10px;
+                padding: 5px 10px;
+                font-size: 0.8em;
+            }
+
+            .delete-btn:hover {
+                background-color: #d32f2f;
+            }
+        </style>
+        <div class="container">
+            <h4><a href="../index.html">HOME</a></h4>
+            <h2>Task Manager</h2>
+            <input type="text" id="taskInput" placeholder="Add new task">
+            <button onclick="addTask()">Add Task</button>
+
+            <ul id="taskList">
+                <!-- Tasks will be added here -->
+            </ul>
+        </div>
+
+
+        <script>
+            let btn = document.querySelector("button");
+
+            btn.onmouseenter = function() {
+                this.style.transform = "scale(1.1)";
+            }
+
+            btn.onmouseleave = function() {
+                this.style.transform = "scale(1)";
+            }
+
+            function addTask() {
+                var taskInput = document.getElementById("taskInput");
+                var taskList = document.getElementById("taskList");
+
+                if (taskInput.value === "") {
+                    return;
+                }
+
+                var li = document.createElement("li");
+                li.textContent = taskInput.value;
+                taskList.appendChild(li);
+
+                // Clear input field
+                taskInput.value = "";
+
+                // Add delete button for each task
+                var deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Done!";
+                deleteBtn.className = "delete-btn";
+                li.appendChild(deleteBtn);
+
+                // Add event listener for deleting task when clicked
+                deleteBtn.onclick = function(){
+                    li.remove();
+                    saveTasks();
+                }
+                saveTasks();
+            }
+
+            function loadTasks() {
+                var tasks = localStorage.getItem("tasks");
+                if (tasks) {
+                    document.getElementById("taskList").innerHTML = tasks;
+                    // Reattach event listeners to delete buttons
+                    var deleteBtns = document.querySelectorAll(".delete-btn");
+                    deleteBtns.forEach(function(btn) {
+                        btn.onclick = function() {
+                            this.parentElement.remove();
+                            saveTasks();
+                        }
+                    });
+                }
+            }
+
+            function saveTasks() {
+                var taskList = document.getElementById("taskList");
+                localStorage.setItem("tasks", taskList.innerHTML);
+            }
+
+            window.onload = loadTasks;
+        </script>
+    </body>
+</html>

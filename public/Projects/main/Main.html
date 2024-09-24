@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="icon" href="planning.png">
+</head>
+<body>
+    <h1 class="main-title" style="text-decoration: underline;">My Projects</h1>
+    <h1 style="text-align: center;">runnable in browser</h1>
+    <hr>
+    <div class="projects">
+        <div class="project">
+            <h2>Task Manager</h2>
+            <embed src="../Task.html" style="width: 500px; height: 600px;">
+            <button class="view-project-btn" onclick="window.location.href='../Task.html'">View Project</button>
+        </div>
+
+        <div class="project">
+            <h2>Drawing</h2>
+            <embed src="../Drawing.html" style="width: 500px; height: 600px;">
+            <button class="view-project-btn" onclick="window.location.href='../Drawing.html'">View Project</button>
+        </div>
+
+        <div class="project">
+            <h2>Weather</h2>
+            <embed src="../Weather.html" style="width: 500px; height: 600px;">
+            <button class="view-project-btn" onclick="window.location.href='../Weather.html'">View Project</button>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <style>
+        .main-title {
+            text-align: center;
+            font-size: 3em;
+            color: #ff00ff;
+            text-shadow: 2px 2px 4px #00ffff;
+            margin-bottom: 30px;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        body {
+            background-color: #000033;
+            color: #ffffff;
+            padding: 50px 50px;
+        }
+        
+        /* Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000033;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #330000;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b10000;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid #330000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            background-color: #000022;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.5s;
+        }
+    
+        .project:hover{
+            transform: scale(1.02);
+        }
+
+        embed {
+            border-radius: 50px;
+            padding: 20px 20px;
+        }
+
+        .view-project-btn {
+            background-color: #00000000;
+            border: 2px solid #330000;
+            filter: drop-shadow(0 0 10px #ff0000);
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 500px;
+            transition: 0.5s;
+        }
+
+        .view-project-btn:hover {
+            background-color: #b10000;
+            border-color: #7e0000;
+        }
+        
+    </style>
+</body>
+</html>

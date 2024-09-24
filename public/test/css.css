@@ -1,0 +1,115 @@
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.purple {
+    color: purple;
+}
+
+.orange {
+    color: orange;
+}
+
+.pink {
+    color: pink;
+}
+
+.brown {
+    color: brown;
+}
+
+.gray {
+    color: gray;
+}
+
+.cyan {
+    color: cyan;
+}
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-brown {
+    background-color: brown;
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}
+
+.text-small{
+    font-size: 1em;
+}
+
+.text-medium{
+    font-size: 1.5em;
+}
+
+.text-large{
+    font-size: 2em;
+}
+
+.text-extra-large{
+    font-size: 3em;
+}
+
+.drop-down {
+    position: relative;
+}
+.drop-down-title:hover, .drop-down-content:hover, .drop-down-content {
+    display: block;
+}
+
+.drop-down-content {
+    display: none;
+    animation: show 0.5s ease-in-out;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

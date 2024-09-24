@@ -1,0 +1,345 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #2f00ff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0080ff;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #0099ff;
+}
+
+* {
+    font-family: "Varela Round", system-ui, sans-serif, "arial";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    cursor: url(../../../../photos/cursor2.png), default;
+}
+
+::selection{
+    color: #999000;
+    background-color: #000999;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover{
+    cursor: url(../../../../photos/cursor1.png), pointer;
+}
+
+header {
+    background: #00000073;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 150px 10px 150px;
+}
+
+.navigation1 a {
+    color: #f000d0;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+    padding-left: 30px;
+    transition: 0.5s ease;
+}
+
+.navigation1 a:hover{
+    color: #ff38ff;
+}
+
+.logo img{
+    width: 80%;
+}
+
+section{
+    padding: 50px 50px;
+    background: radial-gradient(#00ccff, #00ccff, #0051ff, #1e22ff, #000286);
+}
+
+.link{
+    color: #00ffff;
+    font-size: 1.8em;
+    font-family: "Amiri";
+    font-weight: 900;
+    text-shadow: white 1px 1px;
+}
+
+.CoursesList{
+    z-index: 998;
+    position: fixed;
+    left: 60%;
+    top: 2%;
+    background: transparent;
+}
+
+.CoursesList a{
+    color: #73007e;
+}
+
+.CoursesList li{
+    background:#2a1ddd;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px #001741;
+    font-weight: 800;
+    font-size: 1.6em;
+    animation: listanimation 1s;
+    display: inline-block;    
+}
+
+.CoursesList ul{
+    background: #00000080;
+    padding: 20px;
+    border-radius: 50px;
+    color: green;
+    list-style: none;
+    max-width: 500px;
+
+}
+
+@keyframes listanimation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.gif{
+    width: 70%;
+}
+
+.titles{
+    position:relative;
+    right: 30%;
+    text-align: center;
+    width: 40%;
+    background: radial-gradient(blue, blue, #ff00d4);
+    border: #500086 solid 10px;
+    border-radius: 50px;
+    padding: 20px 0px;
+    box-shadow: 0px 0px 100px inset #ff4848, 0px 0px 100px #ff4848;
+}
+
+.bigtitle{
+    display: inline;
+    font-family: sans-serif;
+    font-size: 6em;
+    font-weight: 700;
+    text-shadow:
+                1px 1px 0px #d016ff,
+                2px 2px 0px #d016ff,
+                3px 3px 0px #d016ff,
+                4px 4px 0px #d016ff,
+                5px 5px 0px #d016ff;
+}
+
+.smalltitle{
+    display: inline;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.simpletxt{
+    display: inline;
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+}
+
+.binp{
+    display: inline;
+    background: #0051ff;
+    padding: 5px;
+    border: 2px #008cff solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 40px rgb(0, 0, 85);
+    font-weight: 600;
+}
+
+.note{
+    background: #2ee7ff;
+    display: inline;
+    padding: 5px 0px 5px 5px;
+    border-radius: 5px 20px;
+    font-size: 1.1em;
+    line-height: 36px;
+}
+
+.note span{
+    font-weight: 500;
+    font-size: 1.2em;
+    display: inline;
+    background: #2196f3;
+    padding: 1px 15px 4px 20px;
+    border-radius: 5px 20px;
+}
+
+.whatisthis{
+    background: #00c3ff;
+    display: inline;
+    padding: 5px 0px 5px 5px;
+    border-radius: 5px 20px;
+    font-size: 1.1em;
+}
+
+.whatisthis span{
+    font-weight: 500;
+    font-size: 1.2em;
+    display: inline;
+    background: #0059ff;
+    padding: 1px 15px 4px 20px;
+    border-radius: 5px 20px;
+}
+
+.lessonlinksd{
+    display: flex;
+    justify-content: space-between; 
+    background-color: #0000006c;
+}
+
+.nextlesson, .lastlesson{
+    text-decoration: none;
+    color: #000000;
+    background: blue;
+    font-size: 2.0em;
+    box-shadow: inset red 0 0 20px, pink 0 0 30px;
+    border: pink solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+img{
+    max-width: 80%;
+}
+
+.hide{
+    display: none;
+}
+
+@media (max-width: 1192px){
+    header{
+        padding: 10px 100px 10px 100px;
+    }
+
+    .logo img{
+        width: 70%;
+    }
+
+    .navigation1 a {
+        font-size: 1.5em;
+    }
+    
+    .CoursesList{
+        left: 65%;
+    }
+    
+    .CoursesList li{
+        font-size: 1.0em;
+        padding: 10px;
+        margin: 3px;
+    }
+
+    .bigtitle{
+        font-size: 4em;
+    }
+
+    .smalltitle{
+        font-size: 1.5em;
+    }
+
+    .simpletxt{
+        font-size: 1.4em;
+    }
+
+    .note{
+        font-size: 1em;
+    }
+
+    .binp{
+        font-size: 1.2em;
+    }
+
+}
+
+@media (max-width:920px){
+    .logo img{
+        width: 60%;
+    }
+
+    .navigation1 a{
+        font-size: 1.3em;
+    }
+
+    .CoursesList{
+        left: 55%;
+    }
+
+    .bigtitle{
+        font-size: 3.5em;
+        text-shadow: -5px 5px 5px #ff00f2;
+    }
+
+    .smalltitle{
+        font-size: 1.2em;
+    }
+
+    .simpletxt{
+        font-size: 1.2em;
+        font-weight: 350;
+    }
+}
+
+@media (max-width:842px){
+    .logo img{
+        width: 50%;
+    }
+
+    .navigation1 a{
+        font-size: 1.1em;
+    }
+
+    .CoursesList{
+        left: 60%;
+        top: 0;
+    }
+
+    .CoursesList li{
+        font-size: 1.0em;
+        padding: 7px;
+    }
+
+    .CoursesList ul{
+        width: 150px;
+    }
+
+    .simpletxt{
+        font-size: 1.1em;
+    }
+
+    .binp{
+        font-size: 1.1em;
+    }
+
+    .note{
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+}

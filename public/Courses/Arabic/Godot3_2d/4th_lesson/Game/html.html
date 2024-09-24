@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker Circles</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .circle {
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .circle1 {
+            width: 150px;
+            height: 150px;
+            background-color: grey;
+        }
+        .circle2 {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+        }
+        .circle3 {
+            width: 50px;
+            height: 50px;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle circle1" onclick="openColorPicker(this)"></div>
+    <div class="circle circle2" onclick="openColorPicker(this)"></div>
+    <div class="circle circle3" onclick="openColorPicker(this)"></div>
+
+    <input type="color" id="colorPicker" style="display:none;" onchange="changeColor(this.value)">
+
+    <script>
+        function openColorPicker(circle) {
+            document.getElementById('colorPicker').click();
+            document.getElementById('colorPicker').setAttribute('data-circle', circle.className);
+        }
+
+        function changeColor(color) {
+            const circles = document.querySelectorAll('.circle');
+            const selectedCircleClass = document.getElementById('colorPicker').getAttribute('data-circle');
+            let applyColor = false;
+
+            circles.forEach(circle => {
+                if (circle.className === selectedCircleClass) {
+                    applyColor = true;
+                }
+                if (applyColor) {
+                    circle.style.backgroundColor = color;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
